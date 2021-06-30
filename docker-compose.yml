@@ -1,0 +1,62 @@
+#http://phpba.com.br/docker-php/
+
+version: "3"
+services:
+    database:
+        image: postgres:9.6-alpine
+        volumes: 
+            - "data:/var/lib/postgresql/data"
+        environment:            
+            POSTGRES_DB: dbtests
+            POSTGRES_USER: dbadmin            
+            POSTGRES_PASSWORD: dbpassword
+        networks:
+            - compose-network
+    dbadmin:
+        image: dpage/pgadmin4
+        environment:
+            PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
+            PGADMIN_DEFAULT_PASSWORD: "admin"
+        ports:
+            - "16543:80"
+        depends_on:
+            - database
+        networks:
+            - compose-network
+    webserver:
+        image: webdevops/apache:alpine
+        depends_on:
+            - php
+        ports: 
+            - "80:80"
+            - "443:443"
+        volumes: 
+            - ".:/var/www/html"
+        environment:
+            WEB_PHP_SOCKET: "php:9000"
+            WEB_PHP_TIMEOUT: 600
+            WEB_DOCUMENT_ROOT: "/var/www/html"
+        networks:
+            - compose-network
+    php:
+        image: mlalbuquerque/php:7.1
+        build:
+            context: ./dockerfiles
+            dockerfile: php7.1.dockerfile
+            args:
+                - "UID=$UID"
+                - "GID=$GID"
+                - "USER=$USER"
+        volumes:
+            - ".:/var/www/html"
+            - "./dockerfiles/config/php.ini:/usr/local/etc/php/php.ini"
+            - "./dockerfiles/config/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini"
+        environment:
+            PATH: "/root/.composer/vendor/bin:${PATH}"
+        networks:
+            - compose-network
+volumes:
+    data:
+networks: 
+  compose-network:
+    driver: bridge      

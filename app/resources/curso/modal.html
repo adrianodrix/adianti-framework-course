@@ -1,0 +1,26 @@
+<!--[main]-->
+<div class="card text-center">
+  <div class="card-header">
+    Featured
+    <div class="header-actions">
+      <div class="btn btn-danger" style="float: right;" id="close-modal">
+        Fechar
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>
+
+<script>
+  $('#close-modal').click(function() {
+    $('[widget="TWindow"').remove();
+  });
+</script>
+<!--[/main]-->

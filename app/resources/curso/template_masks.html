@@ -1,0 +1,24 @@
+<!--[main]-->
+<div class="card" style="width: 100%">
+  <div class="card-body">
+    <h5 class="card-title">
+      <h3>Exemplos</h3>
+    </h5>
+    <p class="card-text">
+      date_format({{date}}, 'd/m/Y') ou 
+      date_format({{date}}, 'd-m-Y')
+    </p>
+    <p class="card-text">
+      date_format({{datetime}}, 'd/m/Y H:i:s')  ou
+      date_format({{datetime}}, 'd/m/Y H:i') ou
+    </p>
+    <p class="card-text">
+     R$ number_format({{number}}, 2, ',', '.')
+    </p>
+    <p class="card-text">
+      {{value1}}, {{value2}}, {{value3}}</br>      
+      number_format(evaluate(({{value1}} +  {{value2}}) * {{value3}}), 2, ',', '.')
+    </p>
+  </div>
+</div>
+<!--[/main]-->
