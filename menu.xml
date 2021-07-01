@@ -38,7 +38,7 @@
         </menu>
     </menuitem>
     <menuitem label='Básico'>
-        <icon>fa:caret-down fa-fw</icon>
+        <icon>fa:smile fa-fw</icon>
         <menu>
             <menuitem label='Teste'>
                 <icon>fa:cube fa-fw</icon>
@@ -135,6 +135,66 @@
                     </menuitem> 
                 </menu>        
             </menuitem>    
+        </menu>
+    </menuitem>
+     <menuitem label='Banco de Dados'>
+        <icon>fa:database fa-fw</icon>
+        <menu>
+            <menuitem label='Conexão Manual'>
+                <icon>fa:cube fa-fw</icon>
+                <action>ConexaoManual</action>
+            </menuitem>
+            <menuitem label='Conexão com Prepare'>
+                <icon>fa:cube fa-fw</icon>
+                <action>ConexaoPrepare</action>
+            </menuitem>
+            <menuitem label='Actire Records'>
+                <icon>fa:server fa-fw</icon>
+                <menu>
+                    <menuitem label='Object Load'>
+                        <icon>fa:cube fa-fw</icon>
+                        <action>ObjectLoad</action>
+                    </menuitem>
+                    <menuitem label='Object Store'>
+                        <icon>fa:cube fa-fw</icon>
+                        <action>ObjectStore</action>
+                    </menuitem>
+                    <menuitem label='Object Create'>
+                        <icon>fa:cube fa-fw</icon>
+                        <action>ObjectCreate</action>
+                    </menuitem>            
+                    <menuitem label='CRUD Completo'>
+                        <icon>fa:cube fa-fw</icon>
+                        <action>ObjectFind</action>
+                    </menuitem>
+                    <menuitem label='Objetos Associados'>
+                        <icon>fa:cube fa-fw</icon>
+                        <action>ObjetoAssociado</action>
+                    </menuitem>
+                    <menuitem label='Object Stamp'>
+                        <icon>fa:cube fa-fw</icon>
+                        <action>ObjectStamp</action>
+                    </menuitem>      
+                </menu>
+            </menuitem>   
+            <menuitem label='Coleções'>
+                <icon>fa:table fa-fw</icon>            
+                <menu>        
+                    <menuitem label='Contagem'>
+                        <icon>fa:cube fa-fw</icon>
+                        <action>ContagemColecoes</action>
+                    </menuitem>           
+                    <menuitem label='Carregar Coleções'>
+                        <icon>fa:cube fa-fw</icon>
+                        <action>CarregarColecoes</action>
+                    </menuitem>   
+                    <menuitem label='Alterar Coleções'>
+                        <icon>fa:cube fa-fw</icon>
+                        <action>AlterarColecoes</action>
+                    </menuitem>   
+                    
+                </menu>
+            </menuitem>
         </menu>
     </menuitem>
 </menu>
