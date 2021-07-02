@@ -3,6 +3,7 @@ use Adianti\Control\TPage;
 use Adianti\Database\TTransaction;
 use Adianti\Widget\Container\TVBox;
 use Adianti\Widget\Dialog\TMessage;
+use Adianti\Widget\Dialog\TToast;
 use Adianti\Widget\Form\TLabel;
 
 class ObjectLoad extends TPage
@@ -18,10 +19,10 @@ class ObjectLoad extends TPage
       $produto = new Produto(1);      
       TTransaction::close();
        
-      new TMessage('info', $produto->descricao .
+     TToast::show('show', $produto->descricao .
                           ' tem estque total de '. 
                           $produto->evaluate('= {preco_venda} * {estoque}')
-                  );
+                          , 'top right', 'fa:check-circle-o'); 
       
     } catch (\Throwable $th) {
       TTransaction::rollback();

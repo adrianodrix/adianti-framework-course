@@ -29,11 +29,19 @@
             <menuitem label='Ver módulos'>
                 <icon>fa:cube fa-fw</icon>
                 <action>SystemModulesCheckView</action>
-            </menuitem>
-            
+            </menuitem>            
             <menuitem label='Setup PHP'>
                 <icon>fa:code fa-fw</icon>
                 <action>SystemPHPInfoView</action>
+            </menuitem>
+        </menu>
+    </menuitem>
+    <menuitem label='Dicas'>
+        <icon>fa:thumbs-up fa-fw</icon>
+        <menu>
+            <menuitem label='Consulta CEP'>
+                <icon>fa:search fa-fw</icon>
+                <action>ConsultaCep#method=onCep#cep=87023015</action>
             </menuitem>
         </menu>
     </menuitem>
@@ -191,10 +199,51 @@
                     <menuitem label='Alterar Coleções'>
                         <icon>fa:cube fa-fw</icon>
                         <action>AlterarColecoes</action>
-                    </menuitem>   
-                    
+                    </menuitem>  
+                    <menuitem label='Objetos Relacionados'>
+                        <icon>fa:cube fa-fw</icon>
+                        <action>ObjetoRelacionado</action>
+                    </menuitem>  
+                    <menuitem label='Agregações'>
+                        <icon>fa:cube fa-fw</icon>
+                        <action>Agregacoes</action>
+                    </menuitem> 
                 </menu>
             </menuitem>
+        </menu>
+    </menuitem>
+    <menuitem label='Formulários'>
+        <icon>fa:calendar-check fa-fw</icon>            
+        <menu> 
+            <menuitem label='Formulário Manual'>
+                <icon>fa:cube fa-fw</icon>
+                <action>FormManual</action>
+            </menuitem> 
+            <menuitem label='Formulário Bootstrap'>
+                <icon>fa:cube fa-fw</icon>
+                <action>FormBootstrap</action>
+            </menuitem> 
+            <menuitem label='Formulário Vertical'>
+                <icon>fa:cube fa-fw</icon>
+                <action>FormularioBootstrapVertical</action>
+            </menuitem> 
+            <menuitem label='Formulário Colunas'>
+                <icon>fa:cube fa-fw</icon>
+                <action>FormularioBootstrapColunas</action>
+            </menuitem> 
+            <menuitem label='Formulário com Lista de Campos'>
+                <icon>fa:cube fa-fw</icon>
+                <action>BootstrapFieldList</action>
+            </menuitem>
+            <menuitem label='Formulario CheckList'>
+                <icon>fa:cube fa-fw</icon>
+                <action>FormularioCheckList</action>
+            </menuitem>
+            <menuitem label='Uso de Máscaras'>
+                <icon>fa:cube fa-fw</icon>
+                <action>FormularioMascaras</action>
+            </menuitem>
+            
         </menu>
     </menuitem>
 </menu>

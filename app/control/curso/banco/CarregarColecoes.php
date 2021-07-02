@@ -22,12 +22,19 @@ class CarregarColecoes extends TPage
       $criteria->setProperties(['order' => 'id', 'direction' => 'desc']);
 
       $repository = new TRepository(Cliente::class);
-      $clientes = $repository->load($criteria);
+      //$clientes = $repository->load($criteria);
+      //$clientes = Cliente::all();
+      $clientes = Cliente::where('situacao', '=', 'Y')
+                            ->where('genero', '=', 'F')
+                            ->orderBy('id', 'desc')
+                            ->load();                            
       if($clientes) {
         foreach ($clientes as $cliente) {
           echo $cliente->render('{id} {nome}, {telefone}') . '</br>';
         }
       }
+
+
       
       TTransaction::close();
     } catch (\Throwable $th) {
