@@ -243,7 +243,24 @@
                 <icon>fa:cube fa-fw</icon>
                 <action>FormularioMascaras</action>
             </menuitem>
+            <menuitem label='Captura e Corte de Imagens'>
+                <icon>fa:cube fa-fw</icon>
+                <action>FormImageUploader</action>
+            </menuitem>
+            <menuitem label='Lista Ordenada'>
+                <icon>fa:cube fa-fw</icon>
+                <action>FormSortList</action>
+            </menuitem>
             
+        </menu>
+    </menuitem>
+    <menuitem label='Data Grids'>
+        <icon>fa:table fa-fw</icon>            
+        <menu> 
+            <menuitem label='Bootstrap'>
+                <icon>fa:cube fa-fw</icon>
+                <action>DataGridBootstrap</action>
+            </menuitem>
         </menu>
     </menuitem>
 </menu>
