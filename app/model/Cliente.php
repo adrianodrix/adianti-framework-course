@@ -28,6 +28,7 @@ class Cliente extends TRecord
     parent::addAttribute('cidade_id');
     parent::addAttribute('created_at');
     parent::addAttribute('updated_at');
+    parent::addAttribute('obs');
   }
 
   public function set_category(Categoria $categoria)

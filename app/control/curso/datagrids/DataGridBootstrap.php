@@ -24,18 +24,36 @@ class DataGridBootstrap extends TPage
       $this->datagrid = new BootstrapDatagridWrapper(new TDataGrid);
       $this->datagrid->width = '100%';
       $this->datagrid->enablePopover('Detalhes', '<b>ID</b> {id} <br/> <b>NOME</b> {nome}<br/> <b>RESIDENCIA</b> {cidade}/{estado} - {pais}');
+      $this->datagrid->disableDefaultClick();
 
-      $col_id     = new TDataGridColumn('id',     'Código', 'center', '10%');
+      $col_id         = new TDataGridColumn('id',          'Código',     'center', '10%');      
+      $col_nome       = new TDataGridColumn('nome',        'Nome',       'left',   '40%');
+      $col_nascimento = new TDataGridColumn('nascimento',  'Nascimento', 'left',   '10%');
+      $col_cache      = new TDataGridColumn('cache',       'Cache',      'right',   '10%');
+      $col_cidade     = new TDataGridColumn('cidade',      'Cidade',     'left',   '20%');
+      $col_estado     = new TDataGridColumn('estado',      'Estado',     'left',   '10%');
+
       $col_id->title = 'Clique nesta coluna para ação';
-      $col_nome   = new TDataGridColumn('nome',   'Nome',   'left',   '40%');
-      $col_cidade = new TDataGridColumn('cidade', 'Cidade', 'left',   '25%');
-      $col_estado = new TDataGridColumn('estado', 'Estado', 'left',   '25%');
-      $col_cidade->enableAutoHide(500);
+      $col_cidade->enableAutoHide(800);
       $col_estado->enableAutoHide(1000);
 
+      $col_nome->setTransformer(function($nome, $obj, $row) {
+        if($nome)
+        {
+          $icon = '<i class="fas fa-search"></i>';
+          return "<a target=newwindow href='https://www.google.com/search?q=$nome'>$icon $nome</a>";
+        }
+        return $nome;
+      });
+
+      $col_cache->setDataProperty('style', 'font-weight: bold;');
+      $col_cache->setTransformer([$this, 'formatCache']);
+      $col_nascimento->setTransformer([$this, 'formatDate']);
 
       $this->datagrid->addColumn($col_id, new TAction([$this, 'onColAction'], ['coluna' => 'id']));      
       $this->datagrid->addColumn($col_nome);
+      $this->datagrid->addColumn($col_nascimento);
+      $this->datagrid->addColumn($col_cache);
       $this->datagrid->addColumn($col_cidade);
       $this->datagrid->addColumn($col_estado);
 
@@ -120,6 +138,8 @@ class DataGridBootstrap extends TPage
     $item->estado = 'Paraná';
     $item->pais = 'Brasil';
     $item->status = 'S';
+    $item->nascimento = '1981-2-3';
+    $item->cache = 456.23;
     $this->datagrid->addItem($item);
 
     $item = new stdClass;
@@ -129,6 +149,8 @@ class DataGridBootstrap extends TPage
     $item->estado = 'São Paulo';
     $item->pais = 'Brasil';
     $item->status = 'S';
+    $item->nascimento = '1946-11-5';
+    $item->cache = 19874.55;
     $this->datagrid->addItem($item);
 
     $item = new stdClass;
@@ -138,6 +160,8 @@ class DataGridBootstrap extends TPage
     $item->estado = 'Mato Grusso';
     $item->pais = 'Brasil';
     $item->status = 'N';
+    $item->nascimento = '2008-5-2';
+    $item->cache = 5632.22;
     $this->datagrid->addItem($item);
   }
 
@@ -150,5 +174,30 @@ class DataGridBootstrap extends TPage
   public static function onColAction($param)
   {
     new TMessage('info', 'Coluna Clicada: '. $param['coluna']);
+  }
+
+  public function formatCache($cache, $obj, $row)
+  {
+    $formatado = number_format($cache, 2, ',', '.');
+    if($obj->status == 'N')
+    {
+      $row->style = 'background: #FFF9A7';
+    }
+
+    if($cache > 10000)
+    {
+      $formatado = "<span style='color:green'>$formatado</span>";
+    }
+    return ($formatado);
+  }
+
+  public function formatDate($data, $obj, $row)
+  {
+    $date = new DateTime($data);
+    $formatado = $date->format('d/m/Y');
+    $idade = (string) $date
+                        ->diff(new DateTime(date('Y-m-d')))
+                        ->format('%Y anos');
+    return "$formatado ($idade)";
   }
 }

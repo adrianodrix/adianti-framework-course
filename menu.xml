@@ -257,9 +257,38 @@
     <menuitem label='Data Grids'>
         <icon>fa:table fa-fw</icon>            
         <menu> 
-            <menuitem label='Bootstrap'>
+            <menuitem label='Completo'>
                 <icon>fa:cube fa-fw</icon>
                 <action>DataGridBootstrap</action>
+            </menuitem>
+            <menuitem label='Com Cálculos'>
+                <icon>fa:cube fa-fw</icon>
+                <action>DataGridCalculos</action>
+            </menuitem>
+        </menu>
+    </menuitem>
+    <menuitem label='Cadastros'>
+        <icon>fa:user-friends fa-fw</icon>            
+        <menu> 
+            <menuitem label='Listagem de Cidades'>
+                <icon>fa:cube fa-fw</icon>
+                <action>CidadeList</action>
+            </menuitem>
+            <menuitem label='Listagem de Cidades com Traits'>
+                <icon>fa:cube fa-fw</icon>
+                <action>CidadeTraitList</action>
+            </menuitem>
+            <menuitem label='Listagem de Clientes'>
+                <icon>fa:cube fa-fw</icon>
+                <action>ClienteList</action>
+            </menuitem>
+            <menuitem label='Cadastro Básico de Cidades'>
+                <icon>fa:cube fa-fw</icon>
+                <action>CidadeForm</action>
+            </menuitem>
+            <menuitem label='Cadastro de Cidades com Traits'>
+                <icon>fa:cube fa-fw</icon>
+                <action>CidadeForm</action>
             </menuitem>
         </menu>
     </menuitem>
