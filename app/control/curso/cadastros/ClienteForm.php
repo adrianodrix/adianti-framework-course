@@ -2,9 +2,11 @@
 
 use Adianti\Control\TAction;
 use Adianti\Control\TPage;
+use Adianti\Core\AdiantiCoreApplication;
 use Adianti\Database\TTransaction;
 use Adianti\Widget\Base\TScript;
 use Adianti\Widget\Dialog\TMessage;
+use Adianti\Widget\Dialog\TToast;
 use Adianti\Widget\Form\TCombo;
 use Adianti\Widget\Form\TDate;
 use Adianti\Widget\Form\TEntry;
@@ -153,9 +155,10 @@ class ClienteForm extends TPage
             
             TScript::create('Template.closeRightPanel()');
             
-            $pos_action = new TAction( ['ClienteList', 'onReload'] );
-            
-            new TMessage('info', 'Registro gravado com sucesso', $pos_action);
+            //$pos_action = new TAction( ['ClienteList', 'onReload'] );            
+            //new TMessage('info', 'Registro gravado com sucesso', $pos_action);
+            TToast::show('success', 'Regitro salvo com sucesso', 'top right', 'far:check-circle' );
+            AdiantiCoreApplication::loadPage( ClienteList::class, 'onReload');
             
             TTransaction::close();
         }

@@ -55,41 +55,42 @@ class Cliente extends TRecord
 
   public function onBeforeLoad($id)
   {
-    echo __CLASS__ . ": Antes de carregar o registro $id </br>";
+    // echo __CLASS__ . ": Antes de carregar o registro $id </br>";
   }
 
   public function onAfterLoad($object)
   {
-    echo __CLASS__ . ": Depois de carregar o registro </br>";
-    echo json_encode($object);
-    echo '</br>';
+    
+    //echo __CLASS__ . ": Depois de carregar o registro </br>";
+    //echo json_encode($object);
+    //echo '</br>';
   }
 
   public function onBeforeStore($object)
   {
-    echo __CLASS__ . ": Antes de gravar o registro </br>";
-    echo json_encode($object);
-    echo '</br>';
+    //echo __CLASS__ . ": Antes de gravar o registro </br>";
+    //echo json_encode($object);
+    //echo '</br>';
   }
 
   public function onAfterStore($object)
   {
-    echo __CLASS__ . ": Depois de gravar o registro </br>";
-    echo json_encode($object);
-    echo '</br>';
+    //echo __CLASS__ . ": Depois de gravar o registro </br>";
+    //echo json_encode($object);
+    //echo '</br>';
   }
 
   public function onBeforeDelete($object)
   {
-    echo __CLASS__ . ": Antes de excluir o registro </br>";
-    echo json_encode($object);
-    echo '</br>';
+    //echo __CLASS__ . ": Antes de excluir o registro </br>";
+    //echo json_encode($object);
+    //echo '</br>';
   }
 
   public function onAfterDelete($object)
   {
-    echo __CLASS__ . ": Depois de Excluir o registro </br>";
-    echo json_encode($object);
-    echo '</br>';
+    //echo __CLASS__ . ": Depois de Excluir o registro </br>";
+    //echo json_encode($object);
+    //echo '</br>';
   }
 }

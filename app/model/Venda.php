@@ -8,6 +8,8 @@ class Venda extends TRecord
   const PRIMARYKEY = 'id';
   const IDPOLICY = 'max';
 
+  private $cliente;
+
   public function __construct($id = null, $callObjectLoad = TRUE)
   {
     parent::__construct($id, $callObjectLoad);
@@ -15,5 +17,13 @@ class Venda extends TRecord
     parent::addAttribute('total');
     parent::addAttribute('cliente_id');
     parent::addAttribute('obs');
+  }
+
+  public function get_cliente()
+  {
+    if(empty($this->cliente)) {
+      $this->cliente = new Cliente($this->cliente_id);
+    }
+    return $this->cliente;
   }
 }

@@ -126,7 +126,6 @@ class ClienteList extends TPage
         $this->pageNavigation->setAction( new TAction( [$this, 'onReload'] ));
         $this->pageNavigation->enableCounters();
         
-        
         $panel = new TPanelGroup('Clientes');
         $panel->add($this->form);
         $panel->addFooter($this->pageNavigation);

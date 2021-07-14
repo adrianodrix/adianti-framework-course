@@ -282,6 +282,10 @@
                 <icon>fa:cube fa-fw</icon>
                 <action>ClienteList</action>
             </menuitem>
+            <menuitem label='Vendas'>
+                <icon>fa:cube fa-fw</icon>
+                <action>VendaList</action>
+            </menuitem>
             <menuitem label='Cadastro Básico de Cidades'>
                 <icon>fa:cube fa-fw</icon>
                 <action>CidadeForm</action>
@@ -289,6 +293,93 @@
             <menuitem label='Cadastro de Cidades com Traits'>
                 <icon>fa:cube fa-fw</icon>
                 <action>CidadeForm</action>
+            </menuitem>
+            <menuitem label='Produtos com Edição em Lista'>
+                <icon>fa:cube fa-fw</icon>
+                <action>ProdutoEditList</action>
+            </menuitem>
+            <menuitem label='Produtos com Seleção em Lista'>
+                <icon>fa:cube fa-fw</icon>
+                <action>ProdutoSelectList</action>
+            </menuitem>            
+        </menu>
+    </menuitem>
+    <menuitem label='Relatórios'>
+        <icon>fa:file-pdf fa-fw</icon>            
+        <menu> 
+            <menuitem label='Clientes'>
+                <icon>fa:cube fa-fw</icon>
+                <action>ClienteReport</action>
+            </menuitem>
+            <menuitem label='Clientes via SQL'>
+                <icon>fa:cube fa-fw</icon>
+                <action>ClienteReportSQL</action>
+            </menuitem>
+            <menuitem label='Fatura'>
+                <icon>fa:cube fa-fw</icon>
+                <action>FaturaView</action>
+            </menuitem>
+            <menuitem label='Cõdigo de Barras'>
+                <icon>fa:cube fa-fw</icon>
+                <action>CodigoBarras</action>
+            </menuitem>
+            <menuitem label='QR Code'>
+                <icon>fa:cube fa-fw</icon>
+                <action>CodigoQRCode</action>
+            </menuitem>
+        </menu>
+    </menuitem>
+    <menuitem label='Gráficos'>
+        <icon>fa:chart-line fa-fw</icon>            
+        <menu> 
+            <menuitem label='Dashboard'>
+                <icon>fa:chart-pie fa-fw</icon>
+                <action>DashboardView</action>
+            </menuitem> 
+            <menuitem label='Pizza'>
+                <icon>fa:pizza-slice fa-fw</icon>
+                <action>GraficoPizza</action>
+            </menuitem>  
+            <menuitem label='Barras'>
+                <icon>fa:table fa-fw</icon>
+                <action>GraficoBarras</action>
+            </menuitem> 
+            <menuitem label='Colunas'>
+                <icon>fa:table fa-fw</icon>
+                <action>GraficoColunas</action>
+            </menuitem>
+            <menuitem label='Linhas'>
+                <icon>fa:table fa-fw</icon>
+                <action>GraficoLinhas</action>
+            </menuitem> 
+        </menu>
+    </menuitem>
+    <menuitem label='Utilitários'>
+        <icon>fa:list fa-fw</icon>            
+        <menu> 
+            <menuitem label='Cards'>
+                <icon>fa:cube fa-fw</icon>
+                <action>CardView</action>
+            </menuitem> 
+            <menuitem label='Cards com Vídeos'>
+                <icon>fa:tv fa-fw</icon>
+                <action>CardVideo</action>
+            </menuitem> 
+            <menuitem label='Visão de Ícones'>
+                <icon>fa:paper-plane fa-fw</icon>
+                <action>IconView</action>
+            </menuitem> 
+            <menuitem label='Linha do Tempo'>
+                <icon>fa:clock fa-fw</icon>
+                <action>TimelineView</action>
+            </menuitem> 
+            <menuitem label='Kanban'>
+                <icon>fa:table fa-fw</icon>
+                <action>KanbanView</action>
+            </menuitem>
+            <menuitem label='Calendário'>
+                <icon>fa:calendar fa-fw</icon>
+                <action>Calendario</action>
             </menuitem>
         </menu>
     </menuitem>
